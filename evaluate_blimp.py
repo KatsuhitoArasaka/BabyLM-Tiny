@@ -150,19 +150,19 @@ def main():
 
     # load tokenizer
     # tokenizer = AutoTokenizer.from_pretrained(model_name)
-    tokenizer = AutoTokenizer.from_pretrained(args.model_path)
+    tokenizer = AutoTokenizer.from_pretrained(args.model_path, local_files_only=True)
     tokenize_fn = partial(tokenize_encoder if args.model_type == "encoder" else tokenize_decoder, tokenizer=tokenizer) # need to make the function unary for map()
 
     # load model
     if args.model_type == "encoder":
         # model = AutoModelForMaskedLM.from_pretrained("prajjwal1/bert-tiny").to(DEVICE)
-        model = AutoModelForMaskedLM.from_pretrained(args.model_path).to(DEVICE)
+        model = AutoModelForMaskedLM.from_pretrained(args.model_path, local_files_only=True).to(DEVICE)
     else:
         # model = AutoModelForCausalLM.from_pretrained("sshleifer/tiny-gpt2").to(DEVICE)
-        model = AutoModelForCausalLM.from_pretrained(args.model_path).to(DEVICE)
+        model = AutoModelForCausalLM.from_pretrained(args.model_path, local_files_only=True).to(DEVICE)
     # ---------------------------------------------------------------------------------------------------------------------------
     #⚠️⚠️⚠️
-    
+
     # print(f"Number of parameters: {model.num_parameters()}")
 
     results = {}
