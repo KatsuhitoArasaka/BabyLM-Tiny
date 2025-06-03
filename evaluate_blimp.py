@@ -145,6 +145,13 @@ def main():
     #⚠️⚠️⚠️
     # --------------------------------------------------adjustment for pipeline-------------------------------------------------- 
     args = parser.parse_args()
+
+    print("Model path passed:", args.model_path)
+    import os
+    print("Is directory:", os.path.isdir(args.model_path))
+    print("Files inside:", os.listdir(args.model_path))
+
+    
     # model_name = "prajjwal1/bert-tiny" if args.model_type == "encoder" else "sshleifer/tiny-gpt2"
     evaluate_fn = evaluate_encoder if args.model_type == "encoder" else evaluate_decoder
 
