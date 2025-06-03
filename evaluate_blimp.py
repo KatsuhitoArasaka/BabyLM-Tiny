@@ -13,7 +13,11 @@ DEVICE = 'cuda'
 parser = argparse.ArgumentParser()
 parser.add_argument('--model_type', type=str, required=True, choices=['encoder', 'decoder'])
 parser.add_argument('--batch_size', type=int, required=True, default=64)
-
+#⚠️⚠️⚠️
+# ----------------adjustment for pipeline-------------------
+parser.add_argument('--model_path', type=str, required=True)
+# ----------------------------------------------------------
+#⚠️⚠️⚠️
 
 def tokenize_encoder(examples, tokenizer):
     batch = {
@@ -138,20 +142,27 @@ def evaluate_encoder(model, dataloader, tokenizer):
     return correct / total
 
 def main():
+    #⚠️⚠️⚠️
+    # --------------------------------------------------adjustment for pipeline-------------------------------------------------- 
     args = parser.parse_args()
-    model_name = "prajjwal1/bert-tiny" if args.model_type == "encoder" else "sshleifer/tiny-gpt2"
+    # model_name = "prajjwal1/bert-tiny" if args.model_type == "encoder" else "sshleifer/tiny-gpt2"
     evaluate_fn = evaluate_encoder if args.model_type == "encoder" else evaluate_decoder
 
     # load tokenizer
-    tokenizer = AutoTokenizer.from_pretrained(model_name)
+    # tokenizer = AutoTokenizer.from_pretrained(model_name)
+    tokenizer = AutoTokenizer.from_pretrained(args.model_path)
     tokenize_fn = partial(tokenize_encoder if args.model_type == "encoder" else tokenize_decoder, tokenizer=tokenizer) # need to make the function unary for map()
 
     # load model
     if args.model_type == "encoder":
-        model = AutoModelForMaskedLM.from_pretrained("prajjwal1/bert-tiny").to(DEVICE)
+        # model = AutoModelForMaskedLM.from_pretrained("prajjwal1/bert-tiny").to(DEVICE)
+        model = AutoModelForMaskedLM.from_pretrained(args.model_path).to(DEVICE)
     else:
-        model = AutoModelForCausalLM.from_pretrained("sshleifer/tiny-gpt2").to(DEVICE)
-
+        # model = AutoModelForCausalLM.from_pretrained("sshleifer/tiny-gpt2").to(DEVICE)
+        model = AutoModelForCausalLM.from_pretrained(args.model_path).to(DEVICE)
+    # ---------------------------------------------------------------------------------------------------------------------------
+    #⚠️⚠️⚠️
+    
     # print(f"Number of parameters: {model.num_parameters()}")
 
     results = {}
