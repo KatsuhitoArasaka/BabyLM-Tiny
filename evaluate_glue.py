@@ -27,6 +27,11 @@ parser.add_argument('--bs', '--batch_size', type=int, default=64)
 parser.add_argument('--lr', '--learning_rate', type=float, default=5e-5)
 parser.add_argument('--max_epochs', type=int, default=10)
 parser.add_argument('--patience', type=int, default=3)
+#⚠️⚠️⚠️
+# ----------------adjustment for pipeline-------------------
+parser.add_argument('--model_path', type=str, required=True)
+# ----------------------------------------------------------
+#⚠️⚠️⚠️
 
 def tokenize(examples, tokenizer, subset, truncate=True):
     batch = {
@@ -67,10 +72,15 @@ def padding_collate_fn(batch, max_len=1024, left_padding=False):
 
 
 def main():
+    #⚠️⚠️⚠️
+    # --------------------------------------------------adjustment for pipeline--------------------------------------------------
     args = parser.parse_args()
-    model_name = "prajjwal1/bert-tiny" if args.model_type == "encoder" else "sshleifer/tiny-gpt2"
+    # model_name = "prajjwal1/bert-tiny" if args.model_type == "encoder" else "sshleifer/tiny-gpt2"
 
-    tokenizer = AutoTokenizer.from_pretrained(model_name)
+    
+    # tokenizer = AutoTokenizer.from_pretrained(model_name)
+    tokenizer = AutoTokenizer.from_pretrained(args.model_path)
+
     tokenizer.model_max_length = 512 # will truncate the inputs to this length
     tokenize_fn = partial(tokenize, tokenizer=tokenizer, subset=args.subset) # need to make the function unary for map()
 
@@ -81,10 +91,15 @@ def main():
 
     dataset = dataset.map(tokenize_fn, batched=True, num_proc=4, remove_columns=dataset['train'].column_names) 
 
-    model = AutoModelForSequenceClassification.from_pretrained(model_name, num_labels=2).to(DEVICE)
-    model.config.pad_token_id = 0 # NOTE: can remove, only needed for testing tiny-gpt2
+    # model = AutoModelForSequenceClassification.from_pretrained(model_name, num_labels=2).to(DEVICE)
+    model = AutoModelForSequenceClassification.from_pretrained(args.model_path).to(DEVICE)
+
+    # model.config.pad_token_id = 0 # NOTE: can remove, only needed for testing tiny-gpt2
+    model.config.pad_token_id = tokenizer.pad_token_id
 
     train(model, dataset, args)
+    # ---------------------------------------------------------------------------------------------------------------------------
+    #⚠️⚠️⚠️
 
 
 def train(model, dataset, args):
