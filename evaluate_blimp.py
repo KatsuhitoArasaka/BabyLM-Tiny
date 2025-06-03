@@ -171,7 +171,7 @@ def main():
     for subset in tqdm(BLIMP_SUBSETS):
         # load dataset and tokenize
 
-        print(f"Loading BLiMP subset: {subset}")  # looking for error
+        print(f"Loading BLiMP subset: {subset}", flush=True)  # looking for error
         
         dataset = datasets.load_dataset('nyu-mll/blimp', subset)
         dataset = dataset.map(tokenize_fn, batched=True, num_proc=4, remove_columns=dataset['train'].column_names) # map works with functions that return a dictionary
