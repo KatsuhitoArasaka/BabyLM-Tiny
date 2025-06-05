@@ -30,6 +30,7 @@ parser.add_argument('--patience', type=int, default=3)
 #⚠️⚠️⚠️
 # ----------------adjustment for pipeline-------------------
 parser.add_argument('--model_path', type=str, required=True)
+parser.add_argument('--local_only', action='store_true', help='Load model/tokenizer only from local path')
 # ----------------------------------------------------------
 #⚠️⚠️⚠️
 
@@ -79,7 +80,7 @@ def main():
 
     
     # tokenizer = AutoTokenizer.from_pretrained(model_name)
-    tokenizer = AutoTokenizer.from_pretrained(args.model_path, local_files_only=True)
+    tokenizer = AutoTokenizer.from_pretrained(args.model_path, local_files_only=args.local_only)
 
     tokenizer.model_max_length = 512 # will truncate the inputs to this length
     tokenize_fn = partial(tokenize, tokenizer=tokenizer, subset=args.subset) # need to make the function unary for map()
@@ -92,7 +93,7 @@ def main():
     dataset = dataset.map(tokenize_fn, batched=True, num_proc=4, remove_columns=dataset['train'].column_names) 
 
     # model = AutoModelForSequenceClassification.from_pretrained(model_name, num_labels=2).to(DEVICE)
-    model = AutoModelForSequenceClassification.from_pretrained(args.model_path, local_files_only=True).to(DEVICE)
+    model = AutoModelForSequenceClassification.from_pretrained(args.model_path, local_files_only=args.local_only).to(DEVICE)
 
     # model.config.pad_token_id = 0 # NOTE: can remove, only needed for testing tiny-gpt2
     model.config.pad_token_id = tokenizer.pad_token_id
