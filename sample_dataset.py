@@ -81,4 +81,4 @@ def sample_proportional (output_name, no_words, bnc_spoken, childes, gutenberg, 
     with open(f"./datasets/train_1M/{output_name}_dev.train", "w+", encoding="utf-8") as f:
         f.write(" ".join(dev_words))
 
-sample_proportional("gutenberg_x_bnc_spoken", TARGET_WORDS, 0.5 , 0, 0.5, 0 , 0, 0)
+sample_proportional("prop_to_best_in_class", TARGET_WORDS, 0.275 , .15 , 0.275, .15 , .15, 0)
