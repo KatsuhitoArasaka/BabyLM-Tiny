@@ -76,9 +76,48 @@ def sample_proportional (output_name, no_words, bnc_spoken, childes, gutenberg, 
     print(f"Train words: {len(train_words)}")
     print(f"Dev words: {len(dev_words)}")
     
-    with open(f"./datasets/train_1M/{output_name}.train", "w+", encoding="utf-8") as f:
+    with open(f"./datasets/books_context/{output_name}.train", "w+", encoding="utf-8") as f:
         f.write(" ".join(train_words))
-    with open(f"./datasets/train_1M/{output_name}_dev.train", "w+", encoding="utf-8") as f:
+    with open(f"./datasets/books_context/{output_name}_dev.train", "w+", encoding="utf-8") as f:
         f.write(" ".join(dev_words))
 
-sample_proportional("prop_to_best_in_class", TARGET_WORDS, 0.275 , .15 , 0.275, .15 , .15, 0)
+
+def sample_percentage_of_books (percentage, target_words, filename):
+    with open(f"./datasets/train_100M/gutenberg.train", "r", encoding="utf-8") as f:
+        all_books = f.read()
+    lines = all_books.split("\n")
+
+    # split up the books
+    texts = {}
+    beginning_indices = []
+    for i in range(len(lines)):
+        if lines[i].startswith("= = = "):
+            beginning_indices.append(i)
+    target_with_dev = int(1.2 * target_words)
+    # sample the first percentage of books
+    text = ""
+    total_words = 0
+    for i in range(int(len(beginning_indices) * percentage)):
+        number_of_lines = beginning_indices[i + 1] - beginning_indices[i] - 1
+        last_index = beginning_indices[i] + int(percentage * number_of_lines)
+        book_text = " ".join(lines[(beginning_indices[i] + 1):(last_index)])
+        total_words += len(book_text.split())
+        text += book_text
+        if total_words >= target_with_dev:
+            print(f"Sampled {total_words} words from {i + 1} books.")
+            text_words = text.split()
+            train_text = " ".join(text_words[:target_words])
+            print(f"Train text length: {len(train_text.split())} words.")
+            dev_text = " ".join(text_words[target_words:target_with_dev])
+            print(f"Dev text length: {len(dev_text.split())} words.")
+            break
+
+    with open(f"./datasets/books_context/{filename}.train", "w", encoding="utf-8") as f:
+        f.write(train_text)
+    with open(f"./datasets/books_context/{filename}_dev.train", "w", encoding="utf-8") as f:
+        f.write(dev_text)
+
+sample_percentage_of_books(0.25, 1_000_000, "gutenberg_1M_25pct_books")
+sample_percentage_of_books(0.5, 1_000_000, "gutenberg_1M_50pct_books")
+sample_percentage_of_books(0.75, 1_000_000, "gutenberg_1M_75pct_books")
+sample_percentage_of_books(1, 1_000_000, "gutenberg_1M_100pct_books")
