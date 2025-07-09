@@ -162,5 +162,5 @@ cython_debug/
 #.idea/
 
 trained_models/
-datasets/train_100M/
+datasets/BabyLM_dataset/train_100M/
 datasets/gutenberg/dataset_books_with_metadata.json
