@@ -1,0 +1,108 @@
+genre,title,author,year,number
+Mystery Books,The Adventures of Sherlock Holmes,Arthur Conan Doyle,1999,1661
+Mystery Books,A Study in Scarlet,Arthur Conan Doyle,1995,244
+Mystery Books,The Hound of the Baskervilles,Arthur Conan Doyle,2002,3070
+Mystery Books,The Mysterious Affair at Styles,Agatha Christie,1997,863
+Mystery Books,The Sign of the Four,Arthur Conan Doyle,2000,2097
+Mystery Books,The Mystery of the Yellow Room,Gaston Leroux,1999,1685
+Mystery Books,The Mystery of Edwin Drood,Charles Dickens,1996,564
+Mystery Books,The Secret Adversary,Agatha Christie,1998,1155
+Mystery Books,The Thirty-Nine Steps,John Buchan,1996,558
+Mystery Books,The Works of Edgar Allan Poe — Volume 1,Edgar Allan Poe,2000,2147
+Mystery Books,The Secret Sharer,Joseph Conrad,2006,220
+Mystery Books,The Spy of the Rebellion,Allan Pinkerton,2011,34973
+Mystery Books,"Ashton-Kirk, Secret Agent",John T. McIntyre,2012,39940
+Mystery Books,The Moonstone,Unknown,2006,155
+Old English Drama Poetry,A Midsummer Night's Dream,William Shakespeare,1998,1514
+Old English Drama Poetry,As You Like It,William Shakespeare,1998,1523
+Old English Drama Poetry,"Othello, the Moor of Venice",William Shakespeare,1998,1531
+Old English Drama Poetry,"Hamlet, Prince of Denmark",William Shakespeare,1998,1524
+Old English Drama Poetry,Macbeth,William Shakespeare,1998,1533
+Old English Drama Poetry,The Tragedy of King Lear,William Shakespeare,1998,1532
+Old English Drama Poetry,The Merchant of Venice,William Shakespeare,1998,1515
+Old English Drama Poetry,Love's Labour's Lost,William Shakespeare,1999,1774
+Old English Drama Poetry,King Richard III,William Shakespeare,1997,1103
+Old English Drama Poetry,The Taming of the Shrew,William Shakespeare,1998,1508
+Old English Drama Poetry,"Spenser's The Faerie Queene, Book I",Edmund Spenser,2005,15272
+Old English Drama Poetry,The Tragical History of Doctor Faustus,Christopher Marlowe,1997,779
+Old English Drama Poetry,Sir P.S.: His Astrophel and Stella,Philip Sidney,2018,56375
+Old English Drama Poetry,The Duchess of Malfi,John Webster,2000,2232
+Old English Drama Poetry,Tamburlaine the Great — Part 1,Christopher Marlowe,1997,1094
+Old English Drama Poetry,The Spanish Tragedy,Thomas Kyd,2011,35330
+Old English Drama Poetry,Tamburlaine the Great — Part 2,Christopher Marlowe,1999,1589
+Old English Drama Poetry,"Volpone; Or, The Fox",Ben Jonson,2003,4039
+Old English Drama Poetry,The Alchemist,Ben Jonson,2003,4081
+Old English Drama Poetry,Every Man in His Humour,Ben Jonson,2003,3694
+Old English Drama Poetry,Shakespeare's Sonnets,William Shakespeare,1997,1041
+Old English Drama Poetry,Venus and Adonis,William Shakespeare,1997,1045
+Old English Drama Poetry,The Rape of Lucrece,William Shakespeare,1998,1505
+Old English Drama Poetry,Hero and Leander,Christopher Marlowe,2006,18781
+Old English Drama Poetry,Edward the Second,Christopher Marlowe,2007,20288
+Old English Drama Poetry,The Jew of Malta,Christopher Marlowe,1997,901
+Old English Drama Poetry,"Epicoene; Or, The Silent Woman",Ben Jonson,2003,4011
+Old English Drama Poetry,The White Devil,John Webster,2004,12915
+Old English Drama Poetry,Paradise Lost,John Milton,1991,20
+Old English Drama Poetry,Paradise Regained,John Milton,1993,58
+Old English Drama Poetry,The Shepheard's Calender: Twelve Aeglogues Proportionable to the Twelve Monethes,Edmund Spenser,2013,42607
+Old English Drama Poetry,"Spenser's Faerie Queene, Vol. 2: Books IV–VII",Unknown,2024,72698
+Romance,Pride and Prejudice,Jane Austen,1998,1342
+Romance,Sense and Sensibility,Jane Austen,1994,161
+Romance,Emma,Jane Austen,1994,158
+Romance,Persuasion,Jane Austen,1994,105
+Romance,Northanger Abbey,Jane Austen,1994,121
+Romance,Lady Susan,Jane Austen,1997,946
+Romance,Wuthering Heights,Emily Brontë,1996,768
+Romance,Madame Bovary,Gustave Flaubert,2006,2413
+Romance,Far from the Madding Crowd,Thomas Hardy,1994,107
+Romance,A Room with a View,Unknown,2001,2641
+Sci-Fi Fantasy,The Wonderful Wizard of Oz,L. Frank Baum,1993,55
+Sci-Fi Fantasy,The War of the Worlds,H. G. Wells,2004,36
+Sci-Fi Fantasy,The Book of Wonder,Lord Dunsany,2005,7477
+Sci-Fi Fantasy,Triplanetary,E. E. Smith,2007,20782
+Sci-Fi Fantasy,The House on the Borderland,William Hope Hodgson,2003,10002
+Sci-Fi Fantasy,The Time Machine,H. G. Wells,2004,35
+Sci-Fi Fantasy,A Journey to the Centre of the Earth,Jules Verne,2006,18857
+Sci-Fi Fantasy,Anthem,Ayn Rand,1998,1250
+Sci-Fi Fantasy,The island of Doctor Moreau,H. G. Wells,2004,159
+Sci-Fi Fantasy,2 B R 0 2 B,Kurt Vonnegut,2007,21279
+Sci-Fi Fantasy,The Gods of Pegana,Lord Dunsany,2005,8395
+Sci-Fi Fantasy,Alice's Adventures in Wonderland,Lewis Carroll,2008,11
+Sci-Fi Fantasy,"The Huge Hunter; Or, The Steam Man of the Prairies",Edward Sylvester Ellis,2005,7506
+Sci-Fi Fantasy,The Wind in the Willows,Kenneth Grahame,1995,289
+Sci-Fi Fantasy,Pierre Grassou,Honoré de Balzac,2005,1230
+Sci-Fi Fantasy,A Scena do Odio,José de Almada Negreiros,2007,22615
+Sci-Fi Fantasy,The Rape of Lucrece,William Shakespeare,1998,1505
+Sci-Fi Fantasy,The Sleeper Awakes,H. G. Wells,2004,12163
+Sci-Fi Fantasy,The Metal Monster,Abraham Merritt,2002,3479
+Sci-Fi Fantasy,The Runaway Skyscraper,Murray Leinster,2005,17355
+Sci-Fi Fantasy,Gulliver's Travels into Several Remote Nations of the World,Jonathan Swift,1997,829
+Sci-Fi Fantasy,Through the Looking-Glass,Lewis Carroll,2008,12
+Sci-Fi Fantasy,The War in the Air,Unknown,1997,780
+Self Help Non Fiction,Self Help; with Illustrations of Conduct and Perseverance,Samuel Smiles,1997,935
+Self Help Non Fiction,Thrift,Samuel Smiles,2004,14418
+Self Help Non Fiction,Character,Samuel Smiles,2001,2541
+Self Help Non Fiction,As a man thinketh,James Allen,2003,4507
+Self Help Non Fiction,The Science of Getting Rich,W. D. Wattles,2019,59844
+Self Help Non Fiction,The Science of Being Well,W. D. Wattles,2010,33917
+Self Help Non Fiction,Increasing Personal Efficiency,Russell H. Conwell,2011,36898
+Self Help Non Fiction,How to Live on 24 Hours a Day,Arnold Bennett,2000,2274
+Self Help Non Fiction,Out from the heart,James Allen,2024,74178
+Self Help Non Fiction,The game of life and how to play it,Florence Scovel Shinn,2024,74878
+Self Help Non Fiction,Common Sense,Thomas Paine,1994,147
+Self Help Non Fiction,Autobiography of Benjamin Franklin,Benjamin Franklin,2006,20203
+Self Help Non Fiction,"Franklin's Way to Wealth; or, ""Poor Richard Improved""",Benjamin Franklin,2013,43855
+Self Help Non Fiction,"Walden, and On The Duty Of Civil Disobedience",Henry David Thoreau,1995,205
+Self Help Non Fiction,Essays of Michel de Montaigne — Complete,Unknown,2004,3600
+Youth And Ya Gutenberg,Alice's Adventures in Wonderland,Lewis Carroll,2008,11
+Youth And Ya Gutenberg,"The Adventures of Tom Sawyer, Complete",Mark Twain,2004,74
+Youth And Ya Gutenberg,Adventures of Huckleberry Finn,Mark Twain,2004,76
+Youth And Ya Gutenberg,Peter Pan,J. M. Barrie,2008,16
+Youth And Ya Gutenberg,Little Women,Louisa May Alcott,1996,514
+Youth And Ya Gutenberg,Heidi,Johanna Spyri,1998,1448
+Youth And Ya Gutenberg,Anne of Green Gables,L. M. Montgomery,2008,45
+Youth And Ya Gutenberg,The Secret Garden,Frances Hodgson Burnett,2005,17396
+Youth And Ya Gutenberg,Treasure Island,Robert Louis Stevenson,2006,120
+Youth And Ya Gutenberg,Black Beauty,Anna Sewell,2006,271
+Youth And Ya Gutenberg,The Wonderful Wizard of Oz,L. Frank Baum,1993,55
+Youth And Ya Gutenberg,Pollyanna,Eleanor H. Porter,1998,1450
+Youth And Ya Gutenberg,A Little Princess,Unknown,1994,146
